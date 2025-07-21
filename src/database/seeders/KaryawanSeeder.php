@@ -17,7 +17,6 @@ class KaryawanSeeder extends Seeder
             'name' => 'Karyawan Satu',
             'email' => 'karyawan@example.com',
             'password' => bcrypt('password'),
-            'role' => 'karyawan',
         ]);
 
         Karyawan::create([
@@ -28,7 +27,6 @@ class KaryawanSeeder extends Seeder
             'email' => 'karyawan@example.com',
             'tanggal_masuk' => now()->subYears(2),
             'status_kerja' => 'Tetap',
-                
         ]);
     }
 

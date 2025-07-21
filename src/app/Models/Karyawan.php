@@ -20,12 +20,13 @@ class Karyawan extends Model
         'status_kerja',
     ];
 
-    protected static function boot() 
+    protected static function boot()
+    {
         parent::boot();
 
-        static::creating(function ($karyawan){
-            if(empty($karyawan->api_token)){
-                $gaji->api_token = Str::random(5);
+        static::creating(function ($karyawan) {
+            if (empty($karyawan->api_token)) {
+                $karyawan->api_token = Str::random(5);
             }
         });
     }

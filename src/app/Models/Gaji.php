@@ -19,11 +19,12 @@ class Gaji extends Model
         'tanggal_input',
     ];
 
-    protected static function boot() 
+    protected static function boot()
+    {
         parent::boot();
 
-        static::creating(function ($gaji){
-            if(empty($gaji->api_token)){
+        static::creating(function ($gaji) {
+            if (empty($gaji->api_token)) {
                 $gaji->api_token = Str::random(5);
             }
         });
